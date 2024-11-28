@@ -21,21 +21,7 @@
             <button class="nav-button prev" onclick="previousSection()" disabled>Previous</button>
             <div class="timeline-track"></div>
             <div class="timeline-dots">
-                <button class="timeline-dot active" onclick="loadSection('sections/section1.html')" data-section="0">
-                    <span class="dot-label">Understanding Data</span>
-                </button>
-                <button class="timeline-dot" onclick="loadSection('sections/section2.html')" data-section="1">
-                    <span class="dot-label">Data Evolution</span>
-                </button>
-                <button class="timeline-dot" onclick="loadSection('sections/section3.html')" data-section="2">
-                    <span class="dot-label">Big Data</span>
-                </button>
-                <button class="timeline-dot" onclick="loadSection('sections/section4.html')" data-section="3">
-                    <span class="dot-label">Data Types</span>
-                </button>
-                <button class="timeline-dot" onclick="loadSection('sections/section5.html')" data-section="4">
-                    <span class="dot-label">Data Professional</span>
-                </button>
+                <!-- Timeline dots will be generated dynamically -->
             </div>
             <button class="nav-button next" onclick="nextSection()">Next</button>
         </div>
@@ -44,6 +30,7 @@
         </div>
     </div>
 
+    <script src="../shared/content.js"></script>
     <script src="../shared/navigation.js"></script>
     <script src="../shared/scorm_api.js"></script>
 </body>

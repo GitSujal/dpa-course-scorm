@@ -8,13 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="section">
-            <h2>Data Quality and Governance</h2>
-
-            <!-- Introduction Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">The Importance of Data Quality</h3>
-                <div class="key-point">
+        <!-- Title -->
+        <h2>Data Quality and Governance</h2>
+        
+        <!-- All Sections Container -->
+        <div class="sections-container">
+            <!-- Main Section -->
+            <div class="section learning-section" data-section="3">
+                <h3 class="section-title">The Importance of Data Quality</h3>
+                
+                <div class="content-section">
+                    <h4>Quality Impact</h4>
                     <p>High-quality data is essential for making informed decisions. Poor data quality can lead to:</p>
                     <ul>
                         <li>Incorrect business decisions</li>
@@ -23,14 +27,10 @@
                         <li>Wasted resources and time</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Main Learning Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Key Dimensions of Data Quality</h3>
-                <p>Data quality is measured across several critical dimensions that determine its usefulness and reliability.</p>
-                
-                <div class="key-point">
+                <div class="content-section">
+                    <h4>Key Dimensions of Data Quality</h4>
+                    <p>Data quality is measured across several critical dimensions that determine its usefulness and reliability.</p>
                     <h4>Essential Quality Dimensions</h4>
                     <ul>
                         <li>Accuracy: Data correctly represents the real-world entity or event</li>
@@ -40,12 +40,9 @@
                         <li>Validity: Data follows defined business rules and formats</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Data Governance Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Data Governance Framework</h3>
-                <div class="key-point">
+                <div class="content-section">
+                    <h4>Data Governance Framework</h4>
                     <p>Data governance ensures proper data management through:</p>
                     <ul>
                         <li>Clear policies and procedures</li>
@@ -55,58 +52,51 @@
                         <li>Regular audits and monitoring</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Interactive Section -->
-            <div class="subsection interactive-section">
-                <h3 class="subsection-title">Quality Assessment Exercise</h3>
-                <p>Think about a dataset you work with regularly. How would you rate its quality across the different dimensions?</p>
-                <div class="reflection-container">
-                    <textarea 
-                        class="reflection-box" 
-                        placeholder="Consider: How accurate is your data? Is it complete? How consistent is it across systems? What quality issues have you encountered?" 
-                        id="section3_reflection"
-                    ></textarea>
-                    <button onclick="saveReflection('section3_reflection')" class="action-button">
-                        Save Reflection
-                    </button>
-                </div>
-            </div>
-
-            <!-- Knowledge Check Section -->
-            <div class="subsection quiz-section">
-                <h3 class="subsection-title">Knowledge Check</h3>
-                <div class="quiz-question" id="s3q1">
-                    <p>Which of the following best describes data consistency?</p>
-                    <div class="quiz-options">
-                        <div class="quiz-option">
-                            <input type="radio" name="s3q1" value="a" id="s3q1_a">
-                            <label for="s3q1_a">Data is available when needed</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s3q1" value="b" id="s3q1_b">
-                            <label for="s3q1_b">Data is free from errors</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s3q1" value="c" id="s3q1_c">
-                            <label for="s3q1_c">Data values are the same across all systems</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s3q1" value="d" id="s3q1_d">
-                            <label for="s3q1_d">All required data fields are filled</label>
-                        </div>
+                <div class="content-section">
+                    <h4>Quality Assessment Exercise</h4>
+                    <p>Think about a dataset you work with regularly. How would you rate its quality across the different dimensions?</p>
+                    <div class="reflection-container">
+                        <textarea 
+                            class="reflection-box" 
+                            placeholder="Consider: How accurate is your data? Is it complete? How consistent is it across systems? What quality issues have you encountered?" 
+                            id="section3_reflection"
+                        ></textarea>
+                        <button class="action-button">Save Reflection</button>
                     </div>
-                    <button onclick="checkAnswer('s3q1', 'c')" class="action-button">
-                        Check Answer
-                    </button>
-                    <div id="s3q1_feedback" class="feedback"></div>
                 </div>
-            </div>
 
-            <!-- Summary Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Key Takeaways</h3>
-                <div class="key-point">
+                <div class="content-section">
+                    <h4>Knowledge Check</h4>
+                    <div class="quiz-question" id="s3q1" 
+                         data-correct="c" 
+                         data-explanation="Data consistency means that data values remain the same across different systems and databases. This is crucial for maintaining data integrity and reliability across an organization.">
+                        <p>Which of the following best describes data consistency?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="s3q1" value="a" id="s3q1_a">
+                                <label for="s3q1_a">Data is available when needed</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s3q1" value="b" id="s3q1_b">
+                                <label for="s3q1_b">Data is free from errors</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s3q1" value="c" id="s3q1_c">
+                                <label for="s3q1_c">Data values are the same across all systems</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s3q1" value="d" id="s3q1_d">
+                                <label for="s3q1_d">All required data fields are filled</label>
+                            </div>
+                        </div>
+                        <button class="action-button check-answer">Check Answer</button>
+                        <div id="s3q1_feedback"></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h4>Key Takeaways</h4>
                     <ul>
                         <li>Data quality directly impacts business decisions and outcomes</li>
                         <li>Quality is measured across multiple dimensions</li>
@@ -120,5 +110,6 @@
 
     <!-- Scripts -->
     <script src="../../shared/scorm_api.js"></script>
+    <script src="../../shared/content.js"></script>
 </body>
 </html>

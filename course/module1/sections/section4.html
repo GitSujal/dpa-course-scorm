@@ -8,13 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="section">
-            <h2>Data Analysis Process</h2>
-
-            <!-- Introduction Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Understanding the Data Analysis Process</h3>
-                <div class="key-point">
+        <!-- Title -->
+        <h2>Data Analysis Process</h2>
+        
+        <!-- All Sections Container -->
+        <div class="sections-container">
+            <!-- Main Section -->
+            <div class="section learning-section" data-section="4">
+                <h3 class="section-title">Understanding the Data Analysis Process</h3>
+                
+                <div class="content-section">
+                    <h4>Overview</h4>
                     <p>The data analysis process is a systematic approach to deriving insights from data. It involves:</p>
                     <ul>
                         <li>Defining clear objectives</li>
@@ -23,50 +27,39 @@
                         <li>Communicating results effectively</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Main Learning Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Key Steps in Data Analysis</h3>
-                <p>A successful data analysis project follows these essential steps:</p>
-                
-                <div class="key-point">
+                <div class="content-section">
+                    <h4>Key Steps in Data Analysis</h4>
+                    <p>A successful data analysis project follows these essential steps:</p>
+                    
                     <h4>1. Define the Question</h4>
                     <ul>
                         <li>Identify the business problem</li>
                         <li>Set clear objectives</li>
                         <li>Define success metrics</li>
                     </ul>
-                </div>
 
-                <div class="key-point">
                     <h4>2. Collect the Data</h4>
                     <ul>
                         <li>Identify data sources</li>
                         <li>Gather relevant data</li>
                         <li>Ensure data quality</li>
                     </ul>
-                </div>
 
-                <div class="key-point">
                     <h4>3. Clean and Prepare</h4>
                     <ul>
                         <li>Handle missing values</li>
                         <li>Remove duplicates</li>
                         <li>Format data consistently</li>
                     </ul>
-                </div>
 
-                <div class="key-point">
                     <h4>4. Analyze</h4>
                     <ul>
                         <li>Apply statistical methods</li>
                         <li>Use appropriate tools</li>
                         <li>Test hypotheses</li>
                     </ul>
-                </div>
 
-                <div class="key-point">
                     <h4>5. Share Results</h4>
                     <ul>
                         <li>Create visualizations</li>
@@ -74,58 +67,51 @@
                         <li>Present findings</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Interactive Section -->
-            <div class="subsection interactive-section">
-                <h3 class="subsection-title">Analysis Planning Exercise</h3>
-                <p>Think about a data analysis project you'd like to undertake. Plan out your approach using the steps above.</p>
-                <div class="reflection-container">
-                    <textarea 
-                        class="reflection-box" 
-                        placeholder="What question are you trying to answer? What data will you need? How will you analyze it? How will you present your findings?" 
-                        id="section4_reflection"
-                    ></textarea>
-                    <button onclick="saveReflection('section4_reflection')" class="action-button">
-                        Save Reflection
-                    </button>
-                </div>
-            </div>
-
-            <!-- Knowledge Check Section -->
-            <div class="subsection quiz-section">
-                <h3 class="subsection-title">Knowledge Check</h3>
-                <div class="quiz-question" id="s4q1">
-                    <p>Which step should come first in the data analysis process?</p>
-                    <div class="quiz-options">
-                        <div class="quiz-option">
-                            <input type="radio" name="s4q1" value="a" id="s4q1_a">
-                            <label for="s4q1_a">Collecting data</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s4q1" value="b" id="s4q1_b">
-                            <label for="s4q1_b">Defining the question</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s4q1" value="c" id="s4q1_c">
-                            <label for="s4q1_c">Cleaning the data</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s4q1" value="d" id="s4q1_d">
-                            <label for="s4q1_d">Creating visualizations</label>
-                        </div>
+                <div class="content-section">
+                    <h4>Analysis Planning Exercise</h4>
+                    <p>Think about a data analysis project you'd like to undertake. Plan out your approach using the steps above.</p>
+                    <div class="reflection-container">
+                        <textarea 
+                            class="reflection-box" 
+                            placeholder="What question are you trying to answer? What data will you need? How will you analyze it? How will you present your findings?" 
+                            id="section4_reflection"
+                        ></textarea>
+                        <button class="action-button">Save Reflection</button>
                     </div>
-                    <button onclick="checkAnswer('s4q1', 'b')" class="action-button">
-                        Check Answer
-                    </button>
-                    <div id="s4q1_feedback" class="feedback"></div>
                 </div>
-            </div>
 
-            <!-- Summary Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Key Takeaways</h3>
-                <div class="key-point">
+                <div class="content-section">
+                    <h4>Knowledge Check</h4>
+                    <div class="quiz-question" id="s4q1" 
+                         data-correct="b" 
+                         data-explanation="Defining the question is the crucial first step in data analysis. Without a clear question or objective, you won't know what data to collect or how to analyze it effectively. All other steps follow from having a well-defined question.">
+                        <p>Which step should come first in the data analysis process?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="s4q1" value="a" id="s4q1_a">
+                                <label for="s4q1_a">Collecting data</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s4q1" value="b" id="s4q1_b">
+                                <label for="s4q1_b">Defining the question</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s4q1" value="c" id="s4q1_c">
+                                <label for="s4q1_c">Cleaning the data</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s4q1" value="d" id="s4q1_d">
+                                <label for="s4q1_d">Creating visualizations</label>
+                            </div>
+                        </div>
+                        <button class="action-button check-answer">Check Answer</button>
+                        <div id="s4q1_feedback"></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h4>Key Takeaways</h4>
                     <ul>
                         <li>Data analysis follows a structured process</li>
                         <li>Each step builds on the previous ones</li>
@@ -138,5 +124,6 @@
     </div>
     <!-- Scripts -->
     <script src="../../shared/scorm_api.js"></script>
+    <script src="../../shared/content.js"></script>
 </body>
 </html>

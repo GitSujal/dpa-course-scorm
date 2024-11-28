@@ -8,13 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="section">
-            <h2>Data Types and Sources</h2>
-
-            <!-- Introduction Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Understanding Data Types</h3>
-                <div class="key-point">
+        <!-- Title -->
+        <h2>Data Types and Sources</h2>
+        
+        <!-- All Sections Container -->
+        <div class="sections-container">
+            <!-- Main Section -->
+            <div class="section learning-section" data-section="2">
+                <h3 class="section-title">Understanding Data Types</h3>
+                
+                <div class="content-section">
+                    <h4>Types of Data</h4>
                     <p>Data comes in various forms, each serving different purposes and requiring different handling approaches:</p>
                     <ul>
                         <li>Structured Data (databases, spreadsheets)</li>
@@ -23,15 +27,10 @@
                         <li>Time-series Data (sensor readings, stock prices)</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Main Learning Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Common Data Sources</h3>
-                <p>In today's digital landscape, data flows from numerous sources, each providing unique insights into different aspects of business and society.</p>
-                
-                <div class="key-point">
-                    <h4>Primary Data Sources</h4>
+                <div class="content-section">
+                    <h4>Common Data Sources</h4>
+                    <p>In today's digital landscape, data flows from numerous sources, each providing unique insights:</p>
                     <ul>
                         <li>Customer Relationship Management (CRM) systems</li>
                         <li>Enterprise Resource Planning (ERP) software</li>
@@ -40,58 +39,51 @@
                         <li>Web analytics tools</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Interactive Section -->
-            <div class="subsection interactive-section">
-                <h3 class="subsection-title">Real-World Application</h3>
-                <p>Think about your organization or a company you're familiar with. What types of data do they collect and use?</p>
-                <div class="reflection-container">
-                    <textarea 
-                        class="reflection-box" 
-                        placeholder="Consider: What data sources do they use? How do they combine different types of data? What insights do they gain?" 
-                        id="section2_reflection"
-                    ></textarea>
-                    <button onclick="saveReflection('section2_reflection')" class="action-button">
-                        Save Reflection
-                    </button>
-                </div>
-            </div>
-
-            <!-- Knowledge Check Section -->
-            <div class="subsection quiz-section">
-                <h3 class="subsection-title">Knowledge Check</h3>
-                <div class="quiz-question" id="s2q1">
-                    <p>Which of the following is an example of structured data?</p>
-                    <div class="quiz-options">
-                        <div class="quiz-option">
-                            <input type="radio" name="s2q1" value="a" id="s2q1_a">
-                            <label for="s2q1_a">A video recording</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s2q1" value="b" id="s2q1_b">
-                            <label for="s2q1_b">A customer database with defined fields</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s2q1" value="c" id="s2q1_c">
-                            <label for="s2q1_c">A social media post</label>
-                        </div>
-                        <div class="quiz-option">
-                            <input type="radio" name="s2q1" value="d" id="s2q1_d">
-                            <label for="s2q1_d">An email message</label>
-                        </div>
+                <div class="content-section">
+                    <h4>Real-World Application</h4>
+                    <p>Think about your organization or a company you're familiar with. What types of data do they collect and use?</p>
+                    <div class="reflection-container">
+                        <textarea 
+                            class="reflection-box" 
+                            placeholder="Consider: What data sources do they use? How do they combine different types of data? What insights do they gain?" 
+                            id="section2_reflection"
+                        ></textarea>
+                        <button class="action-button">Save Reflection</button>
                     </div>
-                    <button onclick="checkAnswer('s2q1', 'b')" class="action-button">
-                        Check Answer
-                    </button>
-                    <div id="s2q1_feedback" class="feedback"></div>
                 </div>
-            </div>
 
-            <!-- Summary Section -->
-            <div class="subsection learning-section">
-                <h3 class="subsection-title">Key Takeaways</h3>
-                <div class="key-point">
+                <div class="content-section">
+                    <h4>Knowledge Check</h4>
+                    <div class="quiz-question" id="s2q1" 
+                         data-correct="b" 
+                         data-explanation="A customer database with defined fields is an example of structured data because it has a predefined schema and organized format. Videos, social media posts, and emails are examples of unstructured data.">
+                        <p>Which of the following is an example of structured data?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="s2q1" value="a" id="s2q1_a">
+                                <label for="s2q1_a">A video recording</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s2q1" value="b" id="s2q1_b">
+                                <label for="s2q1_b">A customer database with defined fields</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s2q1" value="c" id="s2q1_c">
+                                <label for="s2q1_c">A social media post</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="s2q1" value="d" id="s2q1_d">
+                                <label for="s2q1_d">An email message</label>
+                            </div>
+                        </div>
+                        <button class="action-button check-answer">Check Answer</button>
+                        <div id="s2q1_feedback"></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h4>Key Takeaways</h4>
                     <ul>
                         <li>Data exists in multiple forms: structured, unstructured, and semi-structured</li>
                         <li>Different data types require different handling approaches</li>
@@ -104,5 +96,6 @@
     </div>
     <!-- Scripts -->
     <script src="../../shared/scorm_api.js"></script>
+    <script src="../../shared/content.js"></script>
 </body>
 </html>
