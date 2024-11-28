@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Data</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Introduction to Data</h1>
+        
+        <div class="content-wrapper">
+            <div id="content-container">
+                <!-- Section content will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Timeline Navigation -->
+        <div class="timeline-nav">
+            <button class="nav-button prev" onclick="previousSection()" disabled>Previous</button>
+            <div class="timeline-track"></div>
+            <div class="timeline-dots">
+                <button class="timeline-dot" onclick="loadSection('sections/section1.html')" data-section="0">
+                    <span class="dot-label">Understanding Data</span>
+                </button>
+                <button class="timeline-dot" onclick="loadSection('sections/section2.html')" data-section="1">
+                    <span class="dot-label">Data Evolution</span>
+                </button>
+                <button class="timeline-dot" onclick="loadSection('sections/section3.html')" data-section="2">
+                    <span class="dot-label">Big Data</span>
+                </button>
+                <button class="timeline-dot" onclick="loadSection('sections/section4.html')" data-section="3">
+                    <span class="dot-label">Data Types</span>
+                </button>
+                <button class="timeline-dot" onclick="loadSection('sections/section5.html')" data-section="4">
+                    <span class="dot-label">Data Professional</span>
+                </button>
+            </div>
+            <button class="nav-button next" onclick="nextSection()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSectionIndex = 0;
+        const sections = [
+            'sections/section1.html',
+            'sections/section2.html',
+            'sections/section3.html',
+            'sections/section4.html',
+            'sections/section5.html'
+        ];
+
+        async function loadSection(url) {
+            try {
+                const response = await fetch(url);
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const content = doc.querySelector('.section');
+                document.getElementById('content-container').innerHTML = content.innerHTML;
+                
+                // Update progress and navigation
+                currentSectionIndex = sections.indexOf(url);
+                updateProgress();
+                updateTimelineNav();
+                window.scrollTo(0, 0); // Scroll to top when changing sections
+                checkScroll(); // Reset next button state
+                
+                // Update SCORM status
+                if (currentSectionIndex === sections.length - 1) {
+                    setSCORMComplete();
+                }
+            } catch (error) {
+                console.error('Error loading section:', error);
+            }
+        }
+
+        function nextSection() {
+            if (currentSectionIndex < sections.length - 1) {
+                currentSectionIndex++;
+                loadSection(sections[currentSectionIndex]);
+            }
+        }
+
+        function previousSection() {
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--;
+                loadSection(sections[currentSectionIndex]);
+            }
+        }
+
+        function updateTimelineNav() {
+            const dots = document.querySelectorAll('.timeline-dot');
+            const prevButton = document.querySelector('.nav-button.prev');
+            const nextButton = document.querySelector('.nav-button.next');
+
+            // Remove active class from all dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Add active class to current dot
+            dots[currentSectionIndex].classList.add('active');
+
+            // Update button states
+            prevButton.disabled = currentSectionIndex === 0;
+            nextButton.disabled = currentSectionIndex === sections.length - 1;
+            
+            if (!nextButton.disabled) {
+                checkScroll();
+            }
+        }
+
+        // Also update dots when clicking directly on them
+        document.querySelectorAll('.timeline-dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSectionIndex = index;
+                loadSection(sections[index]);
+            });
+        });
+
+        function checkScroll() {
+            const nextButton = document.querySelector('.nav-button.next');
+            if (!nextButton || currentSectionIndex === sections.length - 1) return;
+
+            const scrollPosition = window.innerHeight + window.pageYOffset;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollThreshold = 100;
+
+            // Disable the button when NOT scrolled to bottom, enable when scrolled to bottom
+            nextButton.disabled = documentHeight - scrollPosition >= scrollThreshold;
+        }
+
+        // Debounce function to prevent rapid firing of scroll event
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        function updateProgress() {
+            const progress = ((currentSectionIndex + 1) / sections.length) * 100;
+            document.querySelector('.progress').style.width = progress + '%';
+        }
+
+        // Initialize the first section
+        window.onload = function() {
+            loadSection(sections[0]);
+            initializeSCORM();
+            
+            // Add debounced scroll event listener
+            const debouncedCheckScroll = debounce(checkScroll, 50);
+            window.addEventListener('scroll', debouncedCheckScroll);
+            window.addEventListener('resize', debouncedCheckScroll);
+        };
+
+        // Save progress before unloading
+        window.onbeforeunload = function() {
+            terminateSCORM();
+        };
+    </script>
+    <script src="../shared/scorm_api.js"></script>
+</body>
+</html>

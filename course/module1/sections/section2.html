@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types and Sources</title>
+    <link rel="stylesheet" href="../../shared/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>Data Types and Sources</h2>
+
+            <!-- Introduction Section -->
+            <div class="subsection learning-section">
+                <h3 class="subsection-title">Understanding Data Types</h3>
+                <div class="key-point">
+                    <p>Data comes in various forms, each serving different purposes and requiring different handling approaches:</p>
+                    <ul>
+                        <li>Structured Data (databases, spreadsheets)</li>
+                        <li>Unstructured Data (text, images, videos)</li>
+                        <li>Semi-structured Data (JSON, XML)</li>
+                        <li>Time-series Data (sensor readings, stock prices)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Learning Section -->
+            <div class="subsection learning-section">
+                <h3 class="subsection-title">Common Data Sources</h3>
+                <p>In today's digital landscape, data flows from numerous sources, each providing unique insights into different aspects of business and society.</p>
+                
+                <div class="key-point">
+                    <h4>Primary Data Sources</h4>
+                    <ul>
+                        <li>Customer Relationship Management (CRM) systems</li>
+                        <li>Enterprise Resource Planning (ERP) software</li>
+                        <li>Internet of Things (IoT) devices</li>
+                        <li>Social media platforms</li>
+                        <li>Web analytics tools</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Interactive Section -->
+            <div class="subsection interactive-section">
+                <h3 class="subsection-title">Real-World Application</h3>
+                <p>Think about your organization or a company you're familiar with. What types of data do they collect and use?</p>
+                <div class="reflection-container">
+                    <textarea 
+                        class="reflection-box" 
+                        placeholder="Consider: What data sources do they use? How do they combine different types of data? What insights do they gain?" 
+                        id="section2_reflection"
+                    ></textarea>
+                    <button onclick="saveReflection('section2_reflection')" class="action-button">
+                        Save Reflection
+                    </button>
+                </div>
+            </div>
+
+            <!-- Knowledge Check Section -->
+            <div class="subsection quiz-section">
+                <h3 class="subsection-title">Knowledge Check</h3>
+                <div class="quiz-question" id="s2q1">
+                    <p>Which of the following is an example of structured data?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option">
+                            <input type="radio" name="s2q1" value="a" id="s2q1_a">
+                            <label for="s2q1_a">A video recording</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="s2q1" value="b" id="s2q1_b">
+                            <label for="s2q1_b">A customer database with defined fields</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="s2q1" value="c" id="s2q1_c">
+                            <label for="s2q1_c">A social media post</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="s2q1" value="d" id="s2q1_d">
+                            <label for="s2q1_d">An email message</label>
+                        </div>
+                    </div>
+                    <button onclick="checkAnswer('s2q1', 'b')" class="action-button">
+                        Check Answer
+                    </button>
+                    <div id="s2q1_feedback" class="feedback"></div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="subsection learning-section">
+                <h3 class="subsection-title">Key Takeaways</h3>
+                <div class="key-point">
+                    <ul>
+                        <li>Data exists in multiple forms: structured, unstructured, and semi-structured</li>
+                        <li>Different data types require different handling approaches</li>
+                        <li>Modern organizations typically use multiple data sources</li>
+                        <li>Understanding data types helps in choosing appropriate analysis methods</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="nav-button prev" onclick="window.location.href='section1.html'">Previous</button>
+        <button class="nav-button next" onclick="window.location.href='section3.html'">Next</button>
+    </div>
+    <!-- Scripts -->
+    <script src="../../shared/scorm_api.js"></script>
+</body>
+</html>
